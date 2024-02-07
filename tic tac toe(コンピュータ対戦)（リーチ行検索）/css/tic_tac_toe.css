@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+html {
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+    font-family: "Helvetica Neue",
+        Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Meiryo, sans-serif;
+    background-image: url(../img/anhnen.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* overflow: hidden; */
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 8px;
+    color: rgb(228, 224, 2);
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    background: rgb(227, 96, 96);
+}
+
+.wrapper {
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 23px;
+    text-align: center;
+}
+
+.game-container {
+    padding: 40px 0;
+}
+
+.message-container {
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.js-hidden {
+    display: none;
+}
+
+.squares-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.squares-box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.245);
+    /* border: solid 2px; */
+}
+
+.square {
+    position: relative;
+    width: calc(196px /3);
+    height: calc(196px /3);
+    border: solid 2px #000502;
+}
+
+/*luot chim canh cut*/
+.js-pen-checked::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61px;
+    height: 61px;
+    content: '';
+    background-image: url(../img/penguins.jpg);
+    background-size: contain;
+}
+
+/*luot cua gau*/
+.js-bear-checked::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61px;
+    height: 61px;
+    content: '';
+    background-image: url(../img/whitebear.jpg);
+    background-size: contain;
+}
+
+.js-clickable {
+    content: '';
+}
+
+.js-unclickable {
+    pointer-events: none;
+}
+.js-bear_highLight,.js-pen_highLight {
+    
+    border: solid 2px rgb(14, 207, 250);
+}
+
+.btn {
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-size: 24px;
+    background: rgb(0, 186, 243);
+    user-select: none;
+    cursor: pointer;
+}
+
+.back {
+    text-align: left;
+}
+#btn99 {
+    padding: 0.5em;
+    border-radius: 0.3em;
+    color: whitesmoke;
+    font-size: 1.5em;
+    background: rgb(26, 212, 212);
+    cursor: pointer;
+    /*カーソルをポインターの形（かたち）にする*/
+}
+
+/* game button */
+.btn-container {
+    padding-top: 40px;
+}
+
+#btn90:hover {
+    background-color: #1525db;
+    transition-duration: 0.2s;
+}
+
+footer>p {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0px;
+    padding: 1px;
+    color: whitesmoke;
+    font: 16px Rajdhani;
+    text-align: center;
+    background: rbga(1, 24, 31, 0.7);
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding-bottom: 23px;
+    }
+
+    .btn-container {
+        padding-top: 2px;
+    }
+
+    header {
+        font-style: 24px;
+    }
+
+    #msgtext {
+        font-style: 20px;
+    }
+}
+.square {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .square.js-pen-checked {
+    animation: moveAndReturn 0.1s ease-in-out;
+  }
+  
+  @keyframes moveAndReturn {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
