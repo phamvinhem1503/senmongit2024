@@ -3,7 +3,7 @@
 html {
     /* ブラウザのデフォルトが16px                        */
     /* デフォルトの16pxの代わりに1emが10pxになるように調整 */
-    font-size: 62.5%;
+    font-size: 65%;
 }
 
 /* 「*」はユニバーサルセレクタ（すべての要素を対象にするセレクタ）でbox-sizing: border-box;を指定 */
@@ -17,7 +17,7 @@ html {
 body {
     line-height: 1.5;
     /* https://developer.mozilla.org/ja/docs/Web/CSS/line-height */
-    color: rgb(73, 72, 72);
+    color: rgb(4, 4, 4);
     font-size: 1.6rem;
     /* 16px */
     font-family: "Helvetica Neue",
@@ -28,7 +28,7 @@ body {
         sans-serif;
     text-align: center;
     background-image: url(../img/anhnen.jpeg);
-    background-size: 100%;
+    background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
 }
@@ -90,7 +90,7 @@ h2 {
     width: 70%;
     border-radius: 0.4em 1.6em;
     /* https://developer.mozilla.org/ja/docs/Web/CSS/border-radius */
-    background-color: rgba(227, 224, 224, 0.498);
+    background-color: rgba(115, 159, 187, 0.613);
     box-shadow: 0 0 1em rgb(49, 47, 47);
     /* https://developer.mozilla.org/ja/docs/Web/CSS/box-shadow */
 }
@@ -166,6 +166,7 @@ footer>p {
 
 @media screen and (max-width: 480px) {
     body {
-        background-size: auto 812px;
+        background-size: auto 1000px;
+        background-position: 50% 0%;
     }
 }
