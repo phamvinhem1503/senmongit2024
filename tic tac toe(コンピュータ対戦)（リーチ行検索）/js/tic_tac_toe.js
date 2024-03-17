@@ -157,10 +157,10 @@ function gameOver(status) {
     let w_sound
     switch (status) {
         case "penguins":
-            w_sound = gameSound[2];
+            w_sound = gameSound[3];
             break;
         case "bear":
-            w_sound = gameSound[3];
+            w_sound = gameSound[2];
             break;
         case "draw":
             w_sound = gameSound[4];
