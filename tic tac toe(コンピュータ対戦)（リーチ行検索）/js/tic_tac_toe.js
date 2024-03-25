@@ -36,20 +36,18 @@ const msgtxt4 = '<p class ="image"><img src ="img/whitebear.jpg" width=61px heig
 const msgtxt5 = '<p class ="image"><img src="img/whitebear.jpg" width =61px height =61px><img src ="img/penguins.jpg" width=61px height=61px</p><p class= "text animate__bounceIn">Draw!</p>';
 
 let gameSound = ["sound/click_sound1.mp3", "sound/click_sound2.mp3", "sound/penwin_sound.mp3", "sound/bearwin_sound.mp3", "sound/draw_sound.mp3", "sound/backgroundmusic.mp3"];
+
 window.addEventListener("DOMContentLoaded", function () {
-  // Khai báo đối tượng âm thanh
-let backgroundMusic = new Audio(gameSound[5]);
-let nhacdangchay = true;
-
-// Chạy nhạc nền
-backgroundMusic.play();
-
     setMessage("pen-turn");
     squaresArray.forEach(square => {
         square.classList.add("js-clickable");
     });
 }, false);
-
+  // Khai báo đối tượng âm thanh
+  let backgroundMusic = new Audio(gameSound[5]);
+  let nhacdangchay = true;
+  // Chạy nhạc nền
+  backgroundMusic.play();
 
 // a_1.addEventListener("click", () => {
 //     isSelect(a_1);
@@ -178,7 +176,7 @@ function gameOver(status) {
     music.currentTime = 0;
     music.play();
     // Tắt nhạc nền nếu một bên thắng
-    if (status === "penguins" || status === "bear") {
+    if (status === "penguins" || status === "bear" || status === "draw") {
         backgroundMusic.pause();
         nhacdangchay = false;
     }
@@ -273,11 +271,11 @@ newgamebtn.addEventListener("click", function () {
     squaresBox.classList.remove("js-unclickable");
     setMessage("pen-turn");
     newgamebtn_display.classList.add("js-hidden");
-    if (!backgroundMusicPlaying) {
+    if (!nhacdangchay) {
         backgroundMusic.play();
         nhacdangchay = true;
     }
-ay
+
     stopSnowfall();
 });
 function bearTurn() {
